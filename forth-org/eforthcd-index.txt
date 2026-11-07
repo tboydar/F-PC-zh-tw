@@ -1,0 +1,84 @@
+Index of eForth Distribution CD
+
+This is a collection of Forth programs and Forth hardware designs placed in
+the public domain by the eForth Group to encourage hardware and software 
+engineers to study and evaluate computers and software based on the eForth model.
+Due to the limited time available, this collection is an alpha release,
+which collects the existing materials in a somewhat organized manner. The 
+materials included, especially the tutorials, will be revised to make the
+presentations clearer and more easily understandable.
+
+Comments and criticism are welcome. A web site will be available to release
+future editions and to receive user feedback, http://www.eforth.com.tw.
+
+Pseries		P-Series microprocessors and FPGA implementations
+	p24manual	Detailed description of P24 CPU and OS by C. H. Ting
+	p21-4th		For MuP21 chip by Jeff Fox
+	p21ef208	eForth version 2.08 for MuP21 by C. H. Ting
+	p8		For Xilinx XC4005 FPGA by C. H. Ting, 16-bit in schematics
+	p16b		For Xliinx XCV1000E FPGA by C. H. Ting, 16-bit in VHDL
+	p24		For Xilinx XCV1000E FPGA by C. H. Ting, 24-bit in VHDL
+
+Win32Forth		Forth optimized for Windows by Tom Zimmer and Andrew McKewan
+	win32forth	Self installed system file to be downloaded from www.forth.org
+	Manual		Windows Forth Manual by C. H. Ting
+
+eForth2		Implementation aligned to eForth Version 2 Model
+		Subroutine threaded using native assemblers
+		All implementations were done by C. H. Ting
+	workshop	Firmware Engineering Workshop, tutorials by C. H. Ting
+	51se22e		For 8051
+	6805ef13	For 6805
+	6812ef		For 68HC12
+	ef2181		For Analog Devices AD2181 DSP
+	eforth86	For PC/DOS, 32 bit mode
+	eforthxa	For Philips 80C51XA 16-bit mode
+	
+eForth1		Implementions aligned to eForth Version 1 Model
+	zenforth	eForth and Zen, Tutorials of eForth by C. H. Ting
+	zen		Platform Sutra, English translation
+	eforth86	Original eForth Model for PC/DOS by Bill Muench and C. H. Ting
+	HC11e4th	For 68HC11 by Karl Lunt
+	efppc		For PowerPC by C. H. Ting
+	eforth98	For 8096/8098 by Kezhong Ting
+	e4th6811	For 68HC11 by Wolfgang Schemmert, optimized
+	e4th8051	For 8051 by Wolfgang Schemmert, optimized
+	eforth51	For 8051 by C. H. Ting, not optimized
+	eforthmp	For MIPS by C. H. Ting
+	eforth78	For NEC 78C10 by John Talbert
+	eforth17	For PIC 17C42 by C. H. Ting
+	eforthjv	For JAVA by Michael A. Losh
+	eforth16	For 68HC16 by Pete Zawasky
+	eforth56	For M56002 DSP by Dave Taliaferro
+	386ef402	For 80x86 protected mode, by C. H. Ting
+	eforthh8	For Hitachi H8/532, by Bernie Mentink
+	transpef	For Transputers by Bob Barr
+	68eforth	For 68000 and 68HC11 by Richard Haskell
+	z80efort	For Z80 by Ken Chen
+	68se4th		For 68000 and 68HC11 by Richard Haskell, subroutine threaded
+	eforth32	For PC in 32-bit mode, by Rick VanNorman
+
+fpc		Forth optimized for PC by Tom Zimmer and Robert Smith
+	1course		General tutorials by C. H. Ting
+	2course		Advanced tutorials on I/O by C. H. Ting
+	3course		Advanced tutorials on system by C. H. Ting
+	4course		Tutorials for a college course by Richard Haskell
+	fpc36		Self installed FPC system files
+	fpctech		FPC Technical Reference Manual by C. H. Ting
+	fpcuser		FPC Users Manual by C. H. Ting
+	tcom25		Target compiler under FPC by Tom Zimmer
+
+f83		3 Forth-83 standard implementations by Henry Laxon and Mike Perry
+	insidf83	Inside F83, tutorials on F83 by C. H. Ting
+	f83-68k		F83 for 68000 CPM68K
+	f838080		F83 for 8080 CPM
+	f83util		F83 utiltity files
+	f83v2-80	F83 version 2 for 8080 CPM
+	f83v2-ms	F83 for 8086 MSDOS
+
+figForth	Orignal Forth implementations by Forth Interest Group
+	fig86		8086 implementation
+	figforth8088	8088 implementation by Charlie Krajewski
+	pdp114th	PDP11 implementation by John James
+	pdp11dat	Data file for above implementation
+	guide		Systems Guide to figForth, by C. H. Ting

@@ -14,6 +14,7 @@ F-PC 內部運作或 8086 組合語言教學的人有個依據。
 ```
 originals/                  原始文件（PDF / ZIP 原樣保存）
 eforth-academy-f-pctech/    易符學苑《F-PC Technical Reference Manual》線上 HTML 版全文
+forth-org/                  forth.org 首頁 + 「Public Domain Forths」頁及其連結之 61 個典藏檔完整鏡射
 zh-tw/                      繁體中文翻譯與教材（臺灣符式推廣協會網頁原樣快照）
 ```
 
@@ -39,6 +40,27 @@ zh-tw/                      繁體中文翻譯與教材（臺灣符式推廣協�
 公開的《F-PC Technical Reference Manual》全文，共 9 個檔案（目錄 + 8 章）：
 虛擬機器、Kernel、輸入輸出與數值、直譯器與編譯器、系統初始化、Kernel 工具、
 基礎工具（一）（二）。`f-pctech.htm` 為原站目錄頁。
+
+### forth.org 鏡射（`forth-org/`）
+
+[Forth Interest Group 官網](https://www.forth.org/)的「[Public Domain Forths](https://www.forth.org/eforth.html)」
+頁面（`eforth.html`）是這批文獻的上游來源。2026-11-07 將該頁與其連結的
+**61 個檔案**完整鏡射（~12 MB，保存原始相對路徑 `library/eforth_SOC/...`），
+含頁面快照（`index.html`、`eforth.html`）與 eForth CD 索引（`eforthcd-index.*`）。
+
+F-PC 相關重點：
+
+| 檔案 | 內容 |
+|---|---|
+| `library/.../fpc/fpctech.ZIP` | **《F-PC Technical Reference Manual》原始文字檔**（chap1–chap8，1989-10）— 本庫合成 PDF 之最上游 |
+| `library/.../fpc/fpcuser.ZIP` | F-PC User's Manual、術語表、自學課程 |
+| `library/.../fpc/1–4COURSE.ZIP` | 丁陳漢蓀《First/Second/Third/Fourth Course》課程教材（LESSON*.SEQ） |
+| `library/.../fpc/tcom25.zip` | F-PC target compiler |
+| 其餘 | eForth1/eForth2 各 CPU 版本、P-series（P8/P16/P21/P24）、Inside F83、figForth 等 |
+
+鏡射時發現兩個連結已死亡（記錄存查，詳見 PROVENANCE.md）：
+`eforthcd.zip`（eForth CD 整包，從未被 Wayback Machine 備份）、
+`eForth1/386EF402.ZIP`（伺服器上是 0 位元組空檔，至少 2016 年起如此）。
 
 ### 繁體中文教材（`zh-tw/`）
 

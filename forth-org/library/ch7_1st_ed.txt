@@ -1,0 +1,300 @@
+CHAPTER VII
+TERMINAL INPUT AND OUTPUT 
+(OCR'd from 1st edition 2nd printing, has typo's)
+
+The basic primitives handling terminal input and output in FORTH are
+KEY and EMIT . The definitions of than depend on the host ocmputer and its
+hardware configurations. It is sufficient to mention here that KEY accepts
+a keystroke from the terminal keyboard and leaves the ASCII code of the
+character of this key on the data stack. EMIT pops an ASCII character frcn
+the data stack and transnits it to the terminal for display. EMIT also
+increnents the variable OUT for emh character it puts out.
+
+The ward that causes a line of text to be reai in frcm the terminal
+is EXPECT. A flow chart shows graphirally haw EXPECT processes
+characters typed in through the terminal.
+
+: EXPECT 	addr n —
+
+		Transfer n characters frcm the terminal to menory starting at
+		addr. The text may be terminated by a carriage return.
+		An ASCII NUL is appended to the end of text.
+
+OVER +	address, the end of text.
+OVER 		Start Of text
+DO 		Repeat the following for n times
+
+KEY		Get one character from terminal
+DUP		Make a copy
+0EH +ORIGIN	Get the ASCII code of input buzk-space
+=
+ IF		If the input is a back-space
+   DROP	Discard the back-space still on stack.
+   8		Replace it with the back-space for the output device
+   OVER	Copy addr
+   I =	See if the current charcter is the first chararter of text
+   DUP	Copy it,to be used as a flag.
+   R> 2 - +	Get the loop index. Decrement it by 1 if it is the starting
+		character, or decrement it by 2 if it is in the middle of
+		the text.
+   >R		Put the corrected loop index back on return stack.
+
+   -		If the back-space is the first character, ring the bell.
+		Otherwise, output back-spade and decranent character count.
+  ELSE	Not a back-space
+    DUP 0DH =	Is it a carriage-return?
+    IF	Yes, it is carriage return
+     LEAVE	Prepare to exit the loop. CR is end of text line.
+     DROP BL	Drop CR iron the stack and replace with a blank.
+     0		Put a null on stack.
+    ELSE DUP	Input is a regular ASCII character. Make a copy.
+    ENDIF
+    I C!	Store the ASCII chararter into the input buffer area.
+ 
+
+    0 I 1+ !	Guard the text with an ASCII NUL.
+   ENDIF		End of the input loop
+   EMIT		Echo the input charazter to terminal
+  LOOP		Loop back if not the en? of text.
+  DROP		Discard the addr remaining on stack.
+  ;
+
+: QUERY		Input B0 characters (or until a carriage-return) from the
+			terminal and place the text in the terminal input buffer.
+ TIB			TIB contains the starting address of the input terminal
+			buffer.
+  50H EXPECT	Get 80 charmters.
+  0 IN !		Set the input character counter IN to 0. Text parsing
+			shall begin at TIB .
+
+The work horse in the text interpreter is the word WORD , which
+parses a string delimited by a specified ASCII charxter frcm the input
+buffer and places the string into the word buffer on top of the dictionary.
+The string in the word buffer is in the correct form for a name field in
+a new definition. It may be processed otherwise as required by the text
+interpreter. A flow diagram of WORD is show in Fig. 7, followed by
+a more detailed description.
+
+: WORD          c -------
+
+
+		Read text from the input stream until a delimiter c is
+		encountered. Store the text string at the top of dictionary
+		starting at HERE . The first byte is the charatter count,
+		thm the text string, and two or more blanks. If BLK is
+		zero input is frcm the terminal; otherwise, input fron the
+		disc block referred to by BLK .
+
+BLK @		BLK=0?
+
+IF		BLK is not zero, go lodr at the disc.
+  BLK @	The BLOCK number
+  BLOCK	Grab a block of data frcm disc and pit it in a disc buffer.
+		Leave the lzuffer address on the stack. BLOCK is the word to
+		access disc virtual menory.
+  ELSE	BLK=0, input is from terminal
+   TIB @	Text should be put in the terminal input buffer.
+
+  ENDIF
+
+  IN @	IN contains the character offset into the current input text
+		buffer.
+   +		Add offset to the starting adaiess of buffer, pointing to the
+		next character to be read in.
+  SWAP	Get delimiter c over the string addras.
+  ENCLOSE	A primitive word to scan the text. From the byte address and
+		the delimiter c , it determines the byte offset to the first
+		non-delimiter character, the offset to the first delimiter
+		after the text string, and the offset to the next character
+		after the delimiter. If the string is delimited by a NUL ,
+ 
+
+		the last offst is equal to the previous offset.
+		(addr c — addr nl n2 n3 )
+
+  HERE 22H BLANKS	write 34 blanks to the top of dictionary.
+  IN +!		Increment IN by the character count, pointing to the next
+			text string to be parsed.
+  OVER - >R		Save n2-n1 on return stack.
+  R HERE C!		Store character count as the length byte at HERE .
+  +			Buffer addrss + nl, starting point of the text string in the
+			text buffer.
+  HERE 1+		Adiress after the length byte on dictionary.
+  R>			Get the chararter count back from the return stack.
+  ;			Move the string from input buffer to top of dictionary.
+
+The text string moved over to the top of the dictionary is in the
+correct form for a new header, should a new definition be created. It is also
+in the right form to be compared with other entries in the dictionary
+for a matching name. After the text string is placed at HERE , the text
+intertreter will be able to process it.
+
+Following are words fcr typing string data to the output terminal.
+
+:TYPE 		addr n -—
+
+			Transmit n chararters frcm a text string stored at addr
+			to the terminal.
+
+
+  -DUP		Copy n if it is not zero.
+  IF			n is non-zero
+    OVER +		addr+ n , the end of text
+    SWAP		addr, start of text
+    DO		Loop to type n characters
+      I C@		Fetch character frcm text
+      EMIT		Typeout
+    LOOP		
+    ELSE		n =0, no output
+     DROP		Discard addr
+    ENDIF
+   ;
+
+Since lots of text strings processed by the text interpreter have
+a character count as the first byte of the string, sud: as the name field
+of a word, a special word COUNT is defined to prepare this type of strings
+to be typed out by TYPE. 
+
+: COUNT   			addr1 --- addr2 n
+			Push the address and byte count n of a text string at add:-1
+			to the data stack. The first byte of the text string is a
+			byte oount. COUNT is usually followed by TYPE .
+   DUP 1+		addr2=addr1+1
+   SWAP		Swap addrl over addr2 and fetch the byte count to the stack .
+
+If the text string contains lots of blanks at the erxi, there is no
+use to type them out. A utility word -TRAILING can he used to strip off
+these trailing blanks so that scme I/0 time can be saved. The ocmmand to
+type out a long text string is
+ 
+  addr COUNT -TRAILING TYPE
+
+ : -TRAILING   	addr n1 ---- addr n2
+			Adjust the character count n1 of a text string at addr to
+			suppress trailing blanks.
+  DUP 0
+  DO			Scan n1 chararters
+   OVER OVER	Copy addr and nl
+   + 1 - 		addr+n1-1, the address of the last chararter in the string.
+   C@ BL -		See if it is a blank
+   IF LEAVE		Not a blank. Exit the loop.
+   ELSE 1-		Blank. n2-=n1-1 is now on the stack.
+   ENDIF
+ LOOP			Loop back, decrementing nl until a non-blank character is
+			found, termireting the loop.
+ ;
+
+In a colon definition, scme1:'mes it is neoesary to include messge
+to be typed out at runtime to alert the operator, or to indicate to him the
+progress of the program. These messages can be coded inside a definition
+using the command 
+
+  ." text string --—          " 
+
+The word ." will cause the text string up to " to be typed out. The
+definition of ." uses a runtine procedure (.") which will be discussed
+first.
+
+  : (.")		Rumtime procedure compiled by ." to type an in—line text
+			string to the terminal.
+  R			Copy IP from the return stack, which points to the begining
+			of the in-line text string.
+  COUNT 		Get the length byte of the string, preparing for TYPE .
+  DUP	1+		Length + 1
+  R> + >R		Increment IP on the return stack by 1ength+1, thus skip the
+			text string and point to the next word after " , which is
+			the next wcrd to be executed.
+  TYPE		Now type out the text string.
+  ;
+
+  : ."		Compile an in-line text delimited by the trailing " . Use
+			the rmtizre procedure (.") to type this text to the terminal.
+  22H			ASCII value of the delimiter " .
+  STATE @		Compiling or executing?
+  IF			Compiling state
+   COMPILE (.")	Compile the code field address of (.) so it will type out
+			text at rumtime.
+   WORD		Fetch the text string delimited by " , and store it on top of
+			dictionary, in-line with the ctmpiled adciesses.
+   HERE C@		Fetch the length of string
+   1+ ALLOT		Hove the dictionary pointer parsing the text string. Ready to
+			compile the next word in the same definition.
+  ELSE		Executing state
+
+   WORD		Get the text to HERE , on top of dictionary.
+   HERE		Start of text string, ready to be typed out.
+  ENDIF
+  ;
+
+  IMMEDIATE		This word ." must be executed immediately in the Compiling
+			state to process the text string after it. IMMEDIATE
+			toggle the precedence bit in the name field of ." to make
+			an 'immediate word' .
+
+  : ID.				nfa -----
+			Print an entry's name from its name field address on stack.
+  PAD			Output text buffer address
+  20H			ASCII blank
+  5FH FILL		Fill PAD with as 95 blanks 
+  DUP PFA LFA	Find the link field address
+  OVER -		lfa-nfe, character count
+  PAD SWAP CMOVE	Move the entire name with the length wte to PAD
+  PAD COUNT		Prepare string for output
+
+  01FH AND		No more than 31 characters
+  TYPE 		Type out the name
+  SPACE 		Append a space.
+  ;
+
+			It is necessary to move the name to PAD for output, because
+			the lmgth byte in the name field contains extra bits which
+			contain important :i.nformati.on not to be disturbed by output
+			procechres.
+
+The basic ward to print out text stora? on disc is .LINE , which
+prints out a line (64 characters} of text in a screen. .LINE is also used
+to output error messages stored on disc, and to display screens of texts in
+the editor.
+
+: .LINE 			line scr ---
+			Print on the terminal a line of text frcn disc by its line
+			number and screen number scr given on stack. Trailing
+			blanks are also supressed.
+
+  (LINE) 		Rmtime procedure to convert the line number and the screen
+			number to disc buffer address containing the text.
+  -TRAILING TYPE 	Type out the text.
+  ;
+
+  :(LINE) 			line scr -—- addr count
+  >R 			Save scr on return stack.
+ 
+
+  C/L B/BUF */MOD
+			Calculate the character offset and the screen offset mmbers
+			from the line number, characters/line, and bytes/buffer.
+  R> B/SCR * + 	Calculate the block number frcm scr , blocks/scr, and the
+			buffer number left by */MOD.
+  BLOCK		Call BLOCK to get data ?rm: disc to the disc buffer, and
+			leave the buffer address on stack.
+  + 			Adi character offset to buffer address to get the starting
+			address of the text.
+  C/L 		64 charanzers/line
+  ;
+
+  : LIST 			n —
+			Display the ASCII text of screen n on the terminal.
+  DECIMAL CR 	Switch to decimal base ard output a carriage-return.
+  DUP SCR !		Store n into SCR to be used by the editor.
+  ." SCR # " . 	Print the screen nunber n first.
+  10H 0 DO 		Print the text in 16 lines of 64 characters each.
+  CR I 3 .R SPACE	Print line nunber.
+  I SCR @ .LINE 	Call .LINE to print one line of text.
+ LOOP CR ; 		Output a carriage return after the 1611': line.
+ 
+
+
+
+
+
+ 

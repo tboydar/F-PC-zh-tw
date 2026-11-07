@@ -37,6 +37,30 @@
 
 版權狀態同 `F-PC_Technical_Reference_Manual_1989.pdf`（作者本人公開）。
 
+## forth-org/
+
+forth.org「Public Domain Forths」頁面（`eforth.html`）及其連結檔案之完整鏡射，
+抓取日期 **2026-11-07**。F-PC 3.6 在該頁列為 Public Domain，是本庫 `originals/FPC36.ZIP`
+的原始出處；其餘典藏（eForth、F83、figForth、P-series 等）同屬 FIG 公開之
+public domain / free distribution 檔案。
+
+| 檔案 | 說明 |
+|---|---|
+| `eforth.html`、`index.html` | 頁面快照（2026-11-07） |
+| `eforthcd-index.html`、`eforthcd-index.txt` | eForth CD 內容索引 |
+| `library/eforth_SOC/eforth_SOC_source/...` | 60 個連結檔案，保留原始路徑 |
+
+鏡射時的死亡連結（存查）：
+
+- `eforthcd.zip` — 伺服器 404，且 Wayback Machine 從未備份（eForth CD 整包內容僅存索引）。
+- `library/.../eForth1/386EF402.ZIP` — 伺服器上是 0 位元組空檔；Wayback 三次快照
+  （2016-02-12、2025-08-07、2025-12-30）內容亦皆為空，故未收錄。
+- 頁面上的外部連結（ftp://ftp.taygeta.com 的 Win32Forth、baymoon.com 個人頁等）未鏡射。
+
+重點檔案與 `originals/` 之關係：`fpc/fpc36.zip` 即 `originals/FPC36.ZIP` 同源；
+`fpc/fpctech.ZIP` 為《F-PC Technical Reference Manual》1989-10 原始文字章節
+（chap1–chap8），是本庫合成 PDF 與易符學苑 HTML 版的最上游。
+
 ## zh-tw/
 
 原樣快照自臺灣符式推廣協會官方 Google Sites
