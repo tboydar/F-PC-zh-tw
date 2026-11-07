@@ -1,0 +1,2621 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=big5">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="virtualMachine.files/filelist.xml">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:LastAuthor>Phillip</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2002-12-08T15:12:00Z</o:Created>
+  <o:LastSaved>2002-12-08T15:12:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>5794</o:Words>
+  <o:Characters>33032</o:Characters>
+  <o:Company>eforth</o:Company>
+  <o:Lines>275</o:Lines>
+  <o:Paragraphs>77</o:Paragraphs>
+  <o:CharactersWithSpaces>38749</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:PunctuationKerning/>
+  <w:DrawingGridHorizontalSpacing>6 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>8.15 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:新細明體;
+	panose-1:2 2 3 0 0 0 0 0 0 0;
+	mso-font-alt:PMingLiU;
+	mso-font-charset:136;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:3 137232384 22 0 1048577 0;}
+@font-face
+	{font-family:細明體;
+	panose-1:2 2 3 9 0 0 0 0 0 0;
+	mso-font-alt:MingLiU;
+	mso-font-charset:136;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 137232384 22 0 1048577 0;}
+@font-face
+	{font-family:"\@細明體";
+	panose-1:2 2 3 9 0 0 0 0 0 0;
+	mso-font-charset:136;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 137232384 22 0 1048577 0;}
+@font-face
+	{font-family:"\@新細明體";
+	panose-1:2 2 3 0 0 0 0 0 0 0;
+	mso-font-charset:136;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:3 137232384 22 0 1048577 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:新細明體;
+	mso-font-kerning:1.0pt;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	font-size:12.0pt;
+	font-family:細明體;
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	mso-font-kerning:1.0pt;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:1031.95pt 728.6pt;
+	mso-page-orientation:landscape;
+	margin:70.3pt 276.0pt 70.3pt 275.95pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:表格內文;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]-->
+</head>
+
+<body lang=ZH-TW style='tab-interval:24.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>CHAPTER 1.<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>F-PC VIRTUAL FORTH MACHINE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>1.1.<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>FORTH ON A SEGMENTED ARCHITECTURE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>Nowadays people think that segmented architecture was
+Intel's greatest sin against humanity and that IBM's adopting this architecture
+for its PC series of computers set the computer industry back by 10 years.<span
+style='mso-spacerun:yes'>&nbsp; </span>However, looking back to the time when
+this architecture was first developed for the 8088 in the middle of 1970's, it
+was a real breakthrough against the tight grip of the 64K byte limit on the
+addressing space.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The segmented architecture was adopted by Intel long
+before the 8088 was even designed.<span style='mso-spacerun:yes'>&nbsp;
+</span>The Macro Assembler developed for the Intel Microprocessor Development
+Systems (MDS) had the assembler directives CODE SEGMENT, DATA SEGMENT, and
+STACK SEGMENT to separate assembler modules so that data and code would not be
+mixed.<span style='mso-spacerun:yes'>&nbsp; </span>The 8088 was designed to
+reduce this software concept to silicon.<span style='mso-spacerun:yes'>&nbsp;
+</span>Standing at the threshold between 8 bit and 16 bit microprocessor
+designs, it was understandable why IBM picked the 8088 as the backbone of its
+new PC lines, which it shoved down our throats and practically wiped out all
+other microprocessors except the 68000 family.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>As far as Forth is concerned, segmented architecture
+is no vice.<span style='mso-spacerun:yes'>&nbsp; </span>There is no problem in
+making full use of all the resources provided by the CPU.<span
+style='mso-spacerun:yes'>&nbsp; </span>F83 did not take advantage of the
+segmented architecture of 8088, nor the 32 bit addressing space of 68000.<span
+style='mso-spacerun:yes'>&nbsp; </span>It was derived from the 8 bit figForth
+model, and tried to be compatible among the three implementations for 8080,
+8088/86, and 68000.<span style='mso-spacerun:yes'>&nbsp; </span>The primary
+concerns of the F83 implementers were portability and compatibility across the
+different CPU's, and it was thus restricted to a 16 bit Forth.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The primary concerns of F-PC are performance and
+addressibility of the entire<span style='mso-spacerun:yes'>&nbsp; </span>memory
+space in the 8088 architecture.<span style='mso-spacerun:yes'>&nbsp; </span>It
+started with F83/8086 Version 2.1.0, which is explained fully in &quot;Inside
+F83&quot; by the author, available from Offete Enterprises.<span
+style='mso-spacerun:yes'>&nbsp; </span>All words needed by the interpreter and
+compiler have been recoded in assembly.<span style='mso-spacerun:yes'>&nbsp;
+</span>The dictionary has been carefully partitioned into a code segment, a
+head segment, and a list segment.<span style='mso-spacerun:yes'>&nbsp;
+</span>The list segment has been designed so that it occupies more space than a
+single 64K byte segment.<span style='mso-spacerun:yes'>&nbsp; </span>The result
+is a highly specialized Forth optimized for the 8088 segmented architecture
+under the MS-DOS operating system.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>1.2.<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>THE F-PC MEMORY MAP<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>In this section, we shall explore the partitioned
+segment structure of F-PC and how the Forth machine is built upon the 8088
+architecture.<span style='mso-spacerun:yes'>&nbsp; </span>Figure 1 shows an
+overview of the memory map of F-PC in the 640K byte space provided by a
+PC/XT/AT system.<span style='mso-spacerun:yes'>&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>At the bottom of the memory map, the DOS occupies an
+area to provide the basic services like directory listing, file copying,
+loading and executing application programs.<span
+style='mso-spacerun:yes'>&nbsp; </span>F-PC is loaded above the DOS area.<span
+style='mso-spacerun:yes'>&nbsp; </span>The first part of F-PC is the Code
+Segment of 64K bytes.<span style='mso-spacerun:yes'>&nbsp; </span>It contains
+all the low level executable code, constants, variables and other data
+structures, including the data and return stacks, terminal input buffer and
+other temporary data storage areas.<span style='mso-spacerun:yes'>&nbsp;
+</span>Most of the Forth words deal with data stored in this segment because
+the CS, DS and SS segment registers are all pointing to the beginning of this
+Code Segment.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>bytes long.<span style='mso-spacerun:yes'>&nbsp;
+</span>Its length can be increased further by changing the constant #CODESEGS
+which specifies the size of this segment in number of 16 byte pages.<span
+style='mso-spacerun:yes'>&nbsp; </span>The List Segment contains lists which
+are sequences of addresses pointing to executable code in the Code
+Segment.<span style='mso-spacerun:yes'>&nbsp; </span>Lists are justified to the
+16 byte page boundary.<span style='mso-spacerun:yes'>&nbsp; </span>Each colon <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>Figure 1.<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>Memory map of F-PC.<o:p></o:p></span></p>
+
+<span lang=EN-US style='font-size:12.0pt;font-family:細明體;mso-bidi-font-family:
+細明體;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>definition is represented by a list in the List
+Segment.<span style='mso-spacerun:yes'>&nbsp; </span>In a large Forth system,
+most words are colon definitions, and it is necessary to provide as much space
+as needed to store them.<span style='mso-spacerun:yes'>&nbsp; </span>In F-PC,
+the List segment can be made to occupied as much as 400K bytes or whatever the
+DOS allows.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The variable XSEG stores the base segment address
+pointing to the beginning of the List Segment.<span
+style='mso-spacerun:yes'>&nbsp; </span>Lists in the List Segment are addressed
+by their segment offset relative to XSEG.<span style='mso-spacerun:yes'>&nbsp;
+</span>Using the segment offset instead of address offset to address lists
+makes it possible to address a list space greater than 64K bytes.<span
+style='mso-spacerun:yes'>&nbsp; </span>The trade-off is that there are bytes
+wasted at the end of a list before the next list starts at the next page
+boundary.<span style='mso-spacerun:yes'>&nbsp; </span>However, the wasted memory
+only accounts for about 5 percent increase in the total sized of F-PC.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The third segment is the Head Segment; it is next
+above the List Segment.<span style='mso-spacerun:yes'>&nbsp; </span>It contains
+the headers or heads of all the words defined in F-PC.<span
+style='mso-spacerun:yes'>&nbsp; </span>The headers are linked into vocabularies
+and vocabularies are hashed into threads.<span style='mso-spacerun:yes'>&nbsp;
+</span>This linked structure of headers allows F-PC to be executed and compiled
+very fast.<span style='mso-spacerun:yes'>&nbsp; </span>The number of threads
+used in a vocabulary is specified by the constant #TTHREADS during
+metacompilation.<span style='mso-spacerun:yes'>&nbsp; </span>Currently, a vocabulary
+is hashed into 64 threads with a special hashing algorithm which distributes
+words evenly among the 64 threads to optimize the compilation of source files.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The Code and List Segments are absolutely required
+for F-PC to run.<span style='mso-spacerun:yes'>&nbsp; </span>In a turnkey
+application the Head Segment can be stripped to conserve memory space.<span
+style='mso-spacerun:yes'>&nbsp; </span>To support user interaction, the Head
+Segment is necessary so that dictionary and vocabularies can be searched.<span
+style='mso-spacerun:yes'>&nbsp; </span>For program development, the editor in
+F-PC requires additional space for text manipulation.<span
+style='mso-spacerun:yes'>&nbsp; </span>The Text Buffer occupies another 64K
+segment.<span style='mso-spacerun:yes'>&nbsp; </span>It is allocated only when
+the editor is invoked to edit a file.<span style='mso-spacerun:yes'>&nbsp;
+</span>To help managing text, the editor also allocates space for a Line List
+Buffer, a Delete Buffer, and a Restore Display Buffer.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>Space above the editor buffers is managed by
+DOS.<span style='mso-spacerun:yes'>&nbsp; </span>If an application needs more
+data storage space, the user can obtain more memory from DOS using DOS service
+request 48H.<span style='mso-spacerun:yes'>&nbsp; </span>Thus the user can
+access the entire 640K bytes of memory in a PC/XT/AT system.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>1.3.<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>THE VIRTUAL FORTH MACHINE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>Forth is a computer model which uses two stacks for
+subroutine nesting, and executes a set of instructions which are represented by
+addresses.<span style='mso-spacerun:yes'>&nbsp; </span>The execution addresses
+are generally arranged as lists.<span style='mso-spacerun:yes'>&nbsp;
+</span>Lists are again represented by addresses which can be used to build more
+powerful lists.<span style='mso-spacerun:yes'>&nbsp; </span>In Forth, the
+execution addresses or instructions are given English-like names which are
+called words.<span style='mso-spacerun:yes'>&nbsp; </span>A Forth system
+provides a basic set of words.<span style='mso-spacerun:yes'>&nbsp; </span>The
+user can define new words using the existing words.<span
+style='mso-spacerun:yes'>&nbsp; </span>The word set is extended until it
+encompasses the whole application.<span style='mso-spacerun:yes'>&nbsp;
+</span>Programming in Forth is thus conceptually different from programming in
+other conventional languages.<span style='mso-spacerun:yes'>&nbsp; </span>In
+Forth, you do not write programs.<span style='mso-spacerun:yes'>&nbsp;
+</span>Instead, you design an instruction set which becomes the solution to
+your problem or your application.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>This model of a computer consists of a set of
+registers, a dictionary which contains all the words and their execution
+procedures, and additional memory to host two stacks and other necessary
+buffers.<span style='mso-spacerun:yes'>&nbsp; </span>Any actual computer can be
+programmed so that it supports the Forth model.<span
+style='mso-spacerun:yes'>&nbsp; </span>Thus a real computer is turned into a
+'Virtual Forth Machine' which executes a Forth instruction set.<span
+style='mso-spacerun:yes'>&nbsp; </span>To host a virtual Forth machine, many of
+the registers in the 8088/86 are dedicated to functions required by the Forth
+model.<span style='mso-spacerun:yes'>&nbsp; </span>The projection of Forth
+registers on the 8088/86 CPU is shown in Table 1.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The 8088/86 definitely is not the ideal CPU to host a
+virtual Forth machine.<span style='mso-spacerun:yes'>&nbsp; </span>BP is not a
+real stack pointer and it is awkward to manipulate data on the return
+stack.<span style='mso-spacerun:yes'>&nbsp; </span>All the registers in the
+8088 have some specialized characteristics which makes coding any application a
+real challenge.<span style='mso-spacerun:yes'>&nbsp; </span>Nevertheless, F-PC
+is coded to make the best use of all the registers in the 8088 and squeezes the
+last ounce of performance out of this CPU.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>Table
+1.<span style='mso-spacerun:yes'>&nbsp; </span>Assignments of Forth Registers
+in 8088<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>Forth<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>8088/86<span
+style='mso-tab-count:1'> </span>Function of Forth Register<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>Register<span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>Register<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>SP<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>SP<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Data stack
+pointer<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>RP<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>BP<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Return stack
+pointer<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>IP<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>ES:SI<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Next
+instruction pointer<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>W<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>AX<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Current word
+pointer<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>UP<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Variable UP<span
+style='mso-tab-count:1'> </span>User area pointer<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>Scratch<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp; </span>BX,CX,DX,DI<span
+style='mso-tab-count:1'> </span>Scratch pad registers<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>---<span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp; </span>CS,DS,SS<span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>Registers which must be
+restored before NEXT<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>At the assembly-language level, data are stored on
+the data stack by the PUSH instruction, and are popped back into internal
+registers for manipulation by POP.<span style='mso-spacerun:yes'>&nbsp;
+</span>Addresses or data on the return stack can be moved to/from the internal
+registers by MOV instruction using BP relative mode to specify items on the
+return stack.<span style='mso-spacerun:yes'>&nbsp; </span>The ES:SI register
+pair is the Instruction Pointer (IP), which is used to point to an address
+where the execution address of the next word to be executed is stored.<span
+style='mso-spacerun:yes'>&nbsp; </span>The self incrementing string instruction
+LODSW ES: is thus very useful in processing a list of execution (code field)
+addresses stored in the List Segment.<span style='mso-spacerun:yes'>&nbsp;
+</span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>As the LODSW instruction reads the execution address
+into the AX register, a JMP AX instruction causes the referred word to be
+executed.<span style='mso-spacerun:yes'>&nbsp; </span>An interesting
+consequence is that the AX register always points to the beginning of a code
+field when a Forth word is executed.<span style='mso-spacerun:yes'>&nbsp;
+</span>Hence the AX register becomes the Current Word or W register in the
+virtual Forth machine, very naturally.<span style='mso-spacerun:yes'>&nbsp;
+</span>If a Forth word has to access data stored in its Body or Parameter
+Field, the address of Body can be computed by adding 3 to AX.<span
+style='mso-spacerun:yes'>&nbsp; </span>If the Forth word does not refer to its
+code field or its Body, AX can be used freely as a scratch pad register.<span
+style='mso-spacerun:yes'>&nbsp; </span>In fact, most Forth code words uses AX
+as the first choice of scratch pad.<span style='mso-spacerun:yes'>&nbsp;
+</span>The second choice of scratch pad register is DX.<span
+style='mso-spacerun:yes'>&nbsp; </span>Special code ending words are defined to
+push AX or AX and DX on the data stack before executing the next Forth word.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>Since the ES register is used to address the colon
+definitions in the List Segment, and the CS, DS, and SS registers have to point
+to the Code Segment, these four segment registers cannot be disturbed.<span
+style='mso-spacerun:yes'>&nbsp; </span>If any of these registers are needed to
+perform some special functions like string compare and string move, their
+contents must be saved and restored before executing NEXT at the end of a Forth
+code word.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>All system variables in F-PC are saved in a area at
+the top of the Code Segment.<span style='mso-spacerun:yes'>&nbsp; </span>The
+beginning of this area is pointed to by the address contained in a variable
+UP.<span style='mso-spacerun:yes'>&nbsp; </span>These variables are addressed
+by an address offset relative to the address in UP.<span
+style='mso-spacerun:yes'>&nbsp; </span>This is not significant in a single task
+environment but is very important when you create background tasks in
+F-PC.<span style='mso-spacerun:yes'>&nbsp; </span>Each task has its own user
+area and it keeps a unique copy of all user variables.<span
+style='mso-spacerun:yes'>&nbsp; </span>The user area thus preserves the entire
+environment of a task, allowing tasks to be switched conveniently and very
+fast.<span style='mso-spacerun:yes'>&nbsp; </span>It also allows Forth words to
+be re-entrant, so that the same code can be shared among all the tasks.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>1.4.<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>THE CODE AND PARAMETER FIELDS <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The Code Segment of F-PC looks very similar to the
+entire F83 system.<span style='mso-spacerun:yes'>&nbsp; </span>It contains a
+dictionary at the bottom.<span style='mso-spacerun:yes'>&nbsp; </span>The
+return stack and the terminal input buffer are on the top.<span
+style='mso-spacerun:yes'>&nbsp; </span>The free memory space between the top of
+the dictionary and the bottom of the return stack is shared by the data stack
+and the dictionary extension when new words are added to the dictionary.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>In the dictionary, each Forth word occupies a
+variable length field call the Code Field.<span style='mso-spacerun:yes'>&nbsp;
+</span>The address of the first byte in this field is called the Code Field
+Address (cfa) or Execution Address of this word.<span
+style='mso-spacerun:yes'>&nbsp; </span>All Forth words are referenced by their
+Code Field Addresses.<span style='mso-spacerun:yes'>&nbsp; </span>The Code
+Field contains executable machine code.<span style='mso-spacerun:yes'>&nbsp;
+</span>A Forth word is executed by directly jumping to its Code Field.<span
+style='mso-spacerun:yes'>&nbsp; </span>In Forth terminology, this arrangement
+is called 'Direct Threaded Code.'<span style='mso-spacerun:yes'>&nbsp;
+</span>This is different from the more conventional 'Indirect Threaded Code'
+used by F83 and many other existing Forth systems in which the code field
+contains an address of executable code rather than the code itself.<span
+style='mso-spacerun:yes'>&nbsp; </span>Direct Threaded Code is much faster than
+Indirect Threaded Code Because it eliminates a level of indirect jump.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>Figure 2.<span style='mso-spacerun:yes'>&nbsp;
+</span>The code fields of different types of words<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>In a low level code word, the Code Field contains
+machine code and is terminated by the NEXT instructions (LODSW ES:<span
+style='mso-spacerun:yes'>&nbsp; </span>JMP AX), or a JMP &gt;NEXT instruction,
+which allows the next Forth word to be executed.<span
+style='mso-spacerun:yes'>&nbsp; </span>In other types of Forth words, the Code
+Field begins with a JMP or CALL instruction which invokes the inner interpreter
+specified for this type of words.<span style='mso-spacerun:yes'>&nbsp;
+</span>Three bytes from the beginning of the Code Field, after the JMP or CALL
+instruction, is the Body or Parameter Field of the word.<span
+style='mso-spacerun:yes'>&nbsp; </span>The Parameter Field contains data or
+other information needed by the word to perform its function.<span
+style='mso-spacerun:yes'>&nbsp; </span>Figure 2 shows a collection of code and
+parameter fields for various types of Forth words, like constants, variables,
+colon definitions, arrays, etc.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>In an indirect threaded Forth system, the Code Field
+is two bytes long and contains a pointer to a piece of executable code which is
+the inner interpreter for this type of words.<span
+style='mso-spacerun:yes'>&nbsp; </span>The Parameter Field follows immediately
+after the Code Field.<span style='mso-spacerun:yes'>&nbsp; </span>In a code
+word, the pointer in the Code Field points to its Parameter Field, which
+contains the executable code.<span style='mso-spacerun:yes'>&nbsp; </span>The
+indirect jump to the code in the Parameter Field via the Code Field wastes a
+considerable number of machine cycles.<span style='mso-spacerun:yes'>&nbsp;
+</span>The direct threaded code in F-PC gains much of its speed by eliminating
+this indirect jump.<span style='mso-spacerun:yes'>&nbsp; </span>The cost is a
+three byte code field for words other than code words, one more byte per word
+than indirect threaded code.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>1.5.<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>THE COLON LISTS<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>Colon definitions are the most prevalent type of
+Forth words.<span style='mso-spacerun:yes'>&nbsp; </span>In F-PC, a colon
+definition is compiled in three separated pieces.<span
+style='mso-spacerun:yes'>&nbsp; </span>The head is placed in the Head Segment;
+it contains a view field, a link field, a name field, and a code pointer
+field.<span style='mso-spacerun:yes'>&nbsp; </span>The executable part is
+compiled in the Code Segment, which is composed of a JMP NEST instruction and a
+list segment offset address.<span style='mso-spacerun:yes'>&nbsp; </span>The
+list part is stored in the List Segment, which is a list of code field
+addresses.<span style='mso-spacerun:yes'>&nbsp; </span>The physical segment
+address of this list is obtained by adding the contents of XSEG to the segment
+offset address stored in the Body (parameter field) of the colon word.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>This rather interesting relationship among the three
+separated parts of a colon definition is shown in Figure 3.<span
+style='mso-spacerun:yes'>&nbsp; </span>The Code Pointer in the head of a colon
+word points to the Code Field in the Code Segment.<span
+style='mso-spacerun:yes'>&nbsp; </span>The Parameter Field points to the
+beginning of a list of code field addresses in the List Segment.<span
+style='mso-spacerun:yes'>&nbsp; </span>To execute a colon word, the text
+interpreter or the outer interpreter in F-PC searches for the name of the colon
+word in the Head Segment.<span style='mso-spacerun:yes'>&nbsp; </span>When the
+colon word is found, the execution address is obtained in the Code Pointer
+Field in its head.<span style='mso-spacerun:yes'>&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>A colon word is executed by a JMP AX instruction with
+AX pointing to its Code Field.<span style='mso-spacerun:yes'>&nbsp; </span>The
+first instruction in its code field is JMP NEST, which saves ES:IP on the
+return stack, calculates the absolute page address of the list by adding the
+contents of its parameter field and the contents of XSEG, and then stores the
+page address in the ES register.<span style='mso-spacerun:yes'>&nbsp;
+</span>After that, the NEXT instruction at the end of the NEST routine obtains
+the first execution address from the list of code field address and starts
+executing the words compiled into the colon definition.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The code field addresses in the list of a colon
+definition are executed in sequence.<span style='mso-spacerun:yes'>&nbsp;
+</span>The last code field address in the list points to the code field of
+UNNEST.<span style='mso-spacerun:yes'>&nbsp; </span>UNNEST pops the top two
+items on the return stack back into the ES:IP register pair and thus restores
+the condition before entering into this colon word.<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>The NEXT instruction at the end of
+UNNEST causes the code compiled after the just-executed colon word to be
+executed.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>Colon words are similar to subroutine calls in
+assembly code and procedures in conventional high level languages.<span
+style='mso-spacerun:yes'>&nbsp; </span>Colon words are much more powerful
+because of the simplicity in the structure of address lists, and because
+parameters are passed on a separate data stack.<span
+style='mso-spacerun:yes'>&nbsp; </span>The colon definitions can be nested with
+only a small overhead in nesting and un-nesting.<span
+style='mso-spacerun:yes'>&nbsp; </span>Colon words are referred to by their
+execution addresses for execution and in compilation.<span
+style='mso-spacerun:yes'>&nbsp; </span>They are structures more powerful and
+more versatile than subroutines or procedures.<span
+style='mso-spacerun:yes'>&nbsp; </span>They are instructions to the virtual
+Forth machine, just like code words constructed from machine code.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>1.6.<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>THE HEADS<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The Head or Header of a word contains its name and
+information about how it is to be executed, its context (vocabulary), and where
+its source code is.<span style='mso-spacerun:yes'>&nbsp; </span>All heads are
+collected in the Head Segment.<span style='mso-spacerun:yes'>&nbsp; </span>A
+head is a variable length structure with information arranged as shown in the
+upper left of Figure 3.<span style='mso-spacerun:yes'>&nbsp; </span>The first
+two bytes are the View Field, which contains a byte offset address in the file
+containing its source definition.<span style='mso-spacerun:yes'>&nbsp;
+</span>(The file is identified by the view field address of this word and the
+link field addresses of the loaded files which are linked into a file
+list).<span style='mso-spacerun:yes'>&nbsp; </span>The view field locates the
+source code of this word so that the user can quickly find the source code by
+the VIEW command in F-PC.<span style='mso-spacerun:yes'>&nbsp; </span>The
+ability to locate quickly the source code greatly improves the friendliness of
+F-PC.<span style='mso-spacerun:yes'>&nbsp; </span>For new users it provides
+on-line documentation for inspecting and studying the system.<span
+style='mso-spacerun:yes'>&nbsp; </span>For programmers, it gives fast access to
+the source code for debugging and modification. <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The next two bytes are the Link Field, which contains
+an address pointing to the link field of the previous word in the same
+vocabulary thread.<span style='mso-spacerun:yes'>&nbsp; </span>The link fields
+connect words with the same hash code into threads so that they can be searched
+quickly to locate a word by its name.<span style='mso-spacerun:yes'>&nbsp;
+</span>In F-PC, the head dictionary is divided into several vocabularies.<span
+style='mso-spacerun:yes'>&nbsp; </span>Words in a vocabulary are hashed into 64
+threads by the first two characters and the lengths of their names.<span
+style='mso-spacerun:yes'>&nbsp; </span>The last <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-spacerun:yes'>&nbsp;</span><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>Figure 3.<span style='mso-spacerun:yes'>&nbsp;
+</span>Structure of a colon definition<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>link field in a thread is stored in a thread table in
+the parameter field of its vocabulary definition.<span
+style='mso-spacerun:yes'>&nbsp; </span>The first link field in a thread is set
+to 0 to terminate vocabulary searching.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>After the link field is a variable length Name
+Field.<span style='mso-spacerun:yes'>&nbsp; </span>The first and last byte in
+the Name Field are flagged by setting the most significant bits in them.<span
+style='mso-spacerun:yes'>&nbsp; </span>The first byte is called the Length Byte
+because it has the character length of the word name stored in the lower 5 bit
+field.<span style='mso-spacerun:yes'>&nbsp; </span>Thus F-PC allows a word to
+have a name with up to 31 characters.<span style='mso-spacerun:yes'>&nbsp;
+</span>Bit 6 in the Length Byte is the Immediate Bit.<span
+style='mso-spacerun:yes'>&nbsp; </span>During compilation of a colon
+definition, words are normally compiled into a list.<span
+style='mso-spacerun:yes'>&nbsp; </span>When the Immediate Bit is set, the word
+is not compiled into the list, but instead is executed immediately.<span
+style='mso-spacerun:yes'>&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>Bit 5 in the length byte is the Smudge Bit.<span
+style='mso-spacerun:yes'>&nbsp; </span>When the Smudge Bit is set, the Forth
+text interpreter will not be able to find this word.<span
+style='mso-spacerun:yes'>&nbsp; </span>This bit is used primarily to prevent
+finding words which are not compiled successfully.<span
+style='mso-spacerun:yes'>&nbsp; </span>When a head is created, this Smudge Bit
+is always set to 1.<span style='mso-spacerun:yes'>&nbsp; </span>After the colon
+word is compiled successfully, this bit is turned off so that the new word is
+revealed to the text interpreter.<span style='mso-spacerun:yes'>&nbsp;
+</span>However, if compilation is unsuccessful, the word remains 'smudged' and
+the interpreter and compiler will not be able to find it.<span
+style='mso-spacerun:yes'>&nbsp; </span>Thus the user is protected from
+compiling or executing invalid words.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>Most Forth systems use the smudge bit to prevent
+invalid words from being executed or compiled.<span
+style='mso-spacerun:yes'>&nbsp; </span>However, the invalid words still occupy
+dictionary space.<span style='mso-spacerun:yes'>&nbsp; </span>F-PC does not use
+the smudge bit to protect the system.<span style='mso-spacerun:yes'>&nbsp;
+</span>Instead, it only links words successfully compiled into the dictionary.<span
+style='mso-spacerun:yes'>&nbsp; </span>Thus when a word is not compiled
+successfully, it does not take up memory space.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The name of a word is compiled in the Name
+Field.<span style='mso-spacerun:yes'>&nbsp; </span>Up to 31 characters can be
+included.<span style='mso-spacerun:yes'>&nbsp; </span>The last character is
+indicated by a 1 in bit 7, to delimit the name field.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The last field in a head is the Code Pointer Field,
+which contains the execution or code field address of this word.<span
+style='mso-spacerun:yes'>&nbsp; </span>The address points to the code field of
+this word in the Code Segment.<span style='mso-spacerun:yes'>&nbsp; </span>This
+address will be used to execute this word by the interpreter or compiled into a
+list by the colon compiler.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The first 256 bytes in the Head Segment are a Code
+Search Table.<span style='mso-spacerun:yes'>&nbsp; </span>This table reduces
+the time to search the Code Pointer Fields in the heads by the decompiler.<span
+style='mso-spacerun:yes'>&nbsp; </span>The vocabulary/thread structure is
+designed to locate the code field of a word from its name.<span
+style='mso-spacerun:yes'>&nbsp; </span>The decompiler needs to do the search in
+reverse, finding the name of a word from its code field address.<span
+style='mso-spacerun:yes'>&nbsp; </span>Because F-PC moves the heads out of the
+code dictionary and puts them in the Head Segment, the natural link between a
+code field and its name field is broken.<span style='mso-spacerun:yes'>&nbsp;
+</span>To find the name field from a code field address, one would have to
+search all heads in the Head Segment.<span style='mso-spacerun:yes'>&nbsp;
+</span>This search would be very time consuming.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>To reduce the amount of searching, we divide the Code
+Segment into 64 1K byte regions.<span style='mso-spacerun:yes'>&nbsp;
+</span>Each region has four bytes in the Code Search table.<span
+style='mso-spacerun:yes'>&nbsp; </span>These four bytes define the area of
+heads to be searched for a code whose code field address falls into this code
+region.<span style='mso-spacerun:yes'>&nbsp; </span>The first two bytes are the
+lower bound of the head space to be searched, and the last two bytes are the
+upper bound.<span style='mso-spacerun:yes'>&nbsp; </span>Therefore, to search
+the name of a code, we have to identify its code region and then fetch the
+upper and lower bounds of the head space.<span style='mso-spacerun:yes'>&nbsp;
+</span>Only the heads between these bounds have to be searched.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The Code Search Table is updated by the compiler when
+a new word is added to the dictionary.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>1.7.<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>F-PC VIRTUAL MACHINE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>Source file: first fifth of KERNEL1.SEQ<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>We will follow the building process of the F-PC
+kernel according to the sequence of events coded in the KERNEL1.SEQ file.<span
+style='mso-spacerun:yes'>&nbsp; </span>Since most Forth words have names in the
+upper case, you should be able to distinguish the code from the narration,
+which is in lower case.<span style='mso-spacerun:yes'>&nbsp; </span>Code is
+shown in the vertical style on the left hand side of a page.<span
+style='mso-spacerun:yes'>&nbsp; </span>In-line comment is shown on the right
+hand side, following a back slash \ which is also used in F-PC to start a
+comment which extends till the end of line.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>It is difficult to follow and fully understand this
+part of the F-PC kernel because the loading is controlled by the F-PC
+metacompiler.<span style='mso-spacerun:yes'>&nbsp; </span>Some of the words are
+compiled into the target dictionary as expected, but some words are compiled
+into the host dictionary as tools to aid the target compilation.<span
+style='mso-spacerun:yes'>&nbsp; </span>Some knowledge about the F83 or F-PC
+metacompilers would be very useful.<span style='mso-spacerun:yes'>&nbsp;
+</span>However, you will gain some insight into the inner structure of a
+virtual Forth machine with only elementary familiarity with Forth in general by
+casually going through this section.<span style='mso-spacerun:yes'>&nbsp;
+</span>When you encounter problems about the inner interpreters later, you can
+always come back and pick up the details then.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The original design of this book was to include the
+F-PC metacompiler to achieve a system closure.<span
+style='mso-spacerun:yes'>&nbsp; </span>As things stand now, the metacompiler
+and many other utilities will be published in separate volumes.<span
+style='mso-spacerun:yes'>&nbsp; </span>In the mean time, you can use Chapter 25
+in &quot;Inside F83&quot; for information about the metacompiler in F83, which
+is very close to the F-PC metacompiler.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The basic problem in understanding F-PC, or F83 and
+many other Forth systems in general, is that there is no starting point.<span
+style='mso-spacerun:yes'>&nbsp; </span>The Forth is generated by itself with
+metacompilation.<span style='mso-spacerun:yes'>&nbsp; </span>You cannot fully
+understand Forth not knowing the metacompiler.<span
+style='mso-spacerun:yes'>&nbsp; </span>You cannot understand the metacompiler
+not knowing the Forth under it.<span style='mso-spacerun:yes'>&nbsp;
+</span>Chicken or egg, which comes first?<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The best place to start is really not here at the
+beginning.<span style='mso-spacerun:yes'>&nbsp; </span>For those who are
+anxious to learn about assembly programming and Forth, Chapter 2 is the proper
+place to start.<span style='mso-spacerun:yes'>&nbsp; </span>There you will find
+the definitions of the most useful Forth words and you can build up you
+knowledge of Forth from there.<span style='mso-spacerun:yes'>&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The remaining of this section discusses the inner
+interpreters which are code that executes Forth instructions using the
+resources provided by the host CPU.<span style='mso-spacerun:yes'>&nbsp;
+</span>The information about the inner interpreters is not necessary in order
+to use Forth.<span style='mso-spacerun:yes'>&nbsp; </span>However, if you have
+to do special things and have to tinker the 8088 CPU and the virtual Forth
+machine, you need to dig through this section to find out why things are done
+the way the are, and how to tailor the system for your needs.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The first page of KERNEL1.SEQ contains some preparative
+actions before code is compiled into the target dictionary.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>ONLY FORTH META ALSO FORTH<span style='mso-tab-count:
+1'>&nbsp; </span>\ Establish the vocabulary search order as FORTH and then META<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>F-PC allows you to assemble the inner interpreter
+NEXT either as in-line code:<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>LODSW
+ES:<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Copy next code address from list pointed to by ES:IP.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Increment IP to point to the next code in list.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>JMP
+AX<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Jump and execute the code.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>or as JMP &gt;NEXT.<span
+style='mso-spacerun:yes'>&nbsp; </span>The in-line NEXT takes four byte for
+every code definition, and the jump to &gt;NEXT takes three bytes.<span
+style='mso-spacerun:yes'>&nbsp; </span>In-line NEXT runs much faster with a
+small overhead in memory.<span style='mso-spacerun:yes'>&nbsp; </span>Jumping
+to &gt;NEXT, on the other hand, provides a central point of return for all code
+words.<span style='mso-spacerun:yes'>&nbsp; </span>It is very handy for
+debuggging the Forth system by setting a break point at &gt;NEXT if we use this
+method.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>TRUE CONSTANT IN-LINE_NEXT<span style='mso-tab-count:
+1'>&nbsp; </span>\ Enable in-line expansion of<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>NEXT, which makes F-PC run faster.<span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>: ?.IN-LINE <span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>(
+-- )<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span><span style='mso-tab-count:
+3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\ Print
+state of IN-LINE_NEXT<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>CR
+.&quot; NEXT is currently &quot; <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>IN-LINE_NEXT
+&gt;REV<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>IF<span
+style='mso-tab-count:1'>&nbsp; </span>[ASSEMBLER] INLINEON<span
+style='mso-spacerun:yes'>&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>[FORTH]
+.&quot;<span style='mso-spacerun:yes'>&nbsp; </span>IN-LINE. &quot;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>ELSE<span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>[ASSEMBLER] INLINEOFF <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>[FORTH]
+.&quot;<span style='mso-spacerun:yes'>&nbsp; </span>NOT &quot; <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&gt;NORM
+.&quot;<span style='mso-spacerun:yes'>&nbsp; </span>IN-LINE. &quot;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>THEN<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>&gt;NORM CR ;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>?.IN-LINE<span style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Print it before compiling the kernel.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>Dictionary pointers in the target must be initialized
+so that the addresses of code, heads and lists can be resolved for the target
+system.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>256 DP-T !<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Set code dictionary pointer compatible with CP/M<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>0 DP-X !<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Set List dictionary pointer<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>HERE 10000 + <span style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Allocate space for the host<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>' TARGET-ORIGIN &gt;BODY !<span style='mso-tab-count:
+2'>&nbsp;&nbsp;&nbsp;&nbsp; </span>\ Initialize physical address of the target
+core image<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The Forth compiler ] and interpreter [ will be
+redefined for the meta compiler.<span style='mso-spacerun:yes'>&nbsp;
+</span>However, we will still need the native Forth compiler/interpreters
+sometimes to manipulate data and code.<span style='mso-spacerun:yes'>&nbsp;
+</span>They are given aliases so that we will not lose the capability.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>IN-META<span style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Put them in META vocabulary<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>: ]]<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>]<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span>;<span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Save the Forth compiler<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>: [[<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>[COMPILE] [<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span>;<span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Save the interpreter<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>FORTH IMMEDIATE META<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>FORWARD: DEFINITIONS<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Hard to define in code but we need it now.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Use it now and resolve it later.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>FORWARD: [<span style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Same<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>We are now ready to start compiling code into the
+target core image.<span style='mso-spacerun:yes'>&nbsp; </span>The first 8
+bytes in the system are vectors to the COLD and WARM start routines.<span
+style='mso-spacerun:yes'>&nbsp; </span>You can freely jump to them in code<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>anytime to restart F-PC.<span
+style='mso-spacerun:yes'>&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>LABEL ORIGIN<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Starting target dictionary<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>JMP
+HERE 8000 + <span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Jump to cold start, will be patched later<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>JMP
+HERE 8000 + <span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Jump to warm start, will be patched later<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>We define a few macros here to make our life a little
+easier later.<span style='mso-spacerun:yes'>&nbsp; </span>Using NEXT as a macro
+allows us to put it in-line later.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>&gt;NEXT is where all the action is.<span
+style='mso-spacerun:yes'>&nbsp; </span>It is the guts of the Virtual Forth
+Machine.<span style='mso-spacerun:yes'>&nbsp; </span>It must advance the
+interpretive pointer held in the ES:IP register pair and jump indirect through
+AX to what it points to.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>&gt;NEXT<span style='mso-tab-count:1'>&nbsp;&nbsp; </span>The
+centralized return point of all code words in F-PC when NEXT is not compiled
+in-line.<span style='mso-spacerun:yes'>&nbsp; </span>This is known as THE Inner
+Interpreter of Forth.<span style='mso-spacerun:yes'>&nbsp; </span>As a colon
+word is executed, the Forth machine scans through a list of code field
+addresses in the list space.<span style='mso-spacerun:yes'>&nbsp; </span>ES:IP
+is pointing to the next code field address in this list.<span
+style='mso-spacerun:yes'>&nbsp; </span>LODSW ES: fetches this address into the
+AX register and increments IP so that ES:IP points to the next code field
+address to be executed.<span style='mso-spacerun:yes'>&nbsp; </span>JMP AX
+executes the code stored in the code segment starting at the address pointed to
+by AX register.<span style='mso-spacerun:yes'>&nbsp; </span>This code sequence
+causes the next Forth word pointed by ES:IP to be executed.<span
+style='mso-spacerun:yes'>&nbsp; </span>The Forth machine runs on this way indefinitely
+or until F-PC is terminated.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>The DPUSH and APUSH labels are space savers.<span
+style='mso-spacerun:yes'>&nbsp; </span>We jump to them in many code words when
+we want to push their contents on the data stack.<span
+style='mso-spacerun:yes'>&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>APUSH<span style='mso-tab-count:1'>&nbsp;&nbsp; </span>Push
+contents of AX on the data stack and then execute NEXT.<span
+style='mso-spacerun:yes'>&nbsp; </span>AX generally holds the most immediate
+results to be returned to the data stack by a code word.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>DPUSH <span style='mso-tab-count:1'>&nbsp; </span>Push
+contents of DX on the data stack and fall into APUSH.<span
+style='mso-spacerun:yes'>&nbsp; </span>DX is used to hold the second piece of
+data to be returned on the data stack.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>LABEL DPUSH<span style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Code of 2PUSH<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>PUSH
+DX<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>LABEL APUSH<span style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Code of 1PUSH<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>PUSH
+AX<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>LABEL &gt;NEXT<span style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Code of NEXT, the Forth inner interpreter<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>LODSW
+ES:<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Load next list address into AX and increment IP<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>JMP
+AX<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Jump to code pointed by AX<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>Next, we create the FORTH vocabulary as the first
+definition in the target dictionary.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>HERE-T ,-Y<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Valid &quot;previous&quot; CFA for<span style='mso-spacerun:yes'>&nbsp;
+</span>&quot;CREATE to build a head<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>HERE-Y HERE-T CNHASH !-Y<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>\ First entry in &gt;NAME
+hash<span style='mso-spacerun:yes'>&nbsp; </span>table<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>HERE-T DUP 100 + CURRENT-T !<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span style='mso-tab-count:
+1'>&nbsp;&nbsp;&nbsp; </span>\ Initialize CURRENT to an array of zero's.<span
+style='mso-spacerun:yes'>&nbsp; </span>They <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>will be replaced by the thread
+table in FORTH.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>HERE-Y <span style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+View field address of FORTH<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>FORTH<span style='mso-tab-count:1'>&nbsp;&nbsp; </span>The
+trunk vocabulary in a Forth system.<span style='mso-spacerun:yes'>&nbsp;
+</span>Most commonly- used Forth words are linked into this vocabulary.<span
+style='mso-spacerun:yes'>&nbsp; </span>It is also by far the biggest vocabulary
+in F-PC, containing about a thousand words.<span
+style='mso-spacerun:yes'>&nbsp; </span>In the BODY of a vocabulary definition,
+there is a thread table containing the last link field addresses of words at
+the top of all the threads.<span style='mso-spacerun:yes'>&nbsp; </span>F-PC
+allows you to vary the size of the thread table, hence the number of threads in
+a vocabulary.<span style='mso-spacerun:yes'>&nbsp; </span>The current
+implementation uses 64 threads.<span style='mso-spacerun:yes'>&nbsp; </span>A
+special hashing algorithm is used to make words distributed evenly among the
+threads to reduce vocabulary searching time during compilation.<span
+style='mso-spacerun:yes'>&nbsp; </span>This hashing scheme enables F-PC to
+compile very fast, about 13000 lines per minute. <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>VOCABULARY FORTH<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Create FORTH vocabulary as the first word in target<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>FORTH DEFINITIONS<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Compile the kernel into the target FORTH vocabulary<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>0 OVER 2+ !-Y ( link )<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Clear link field of FORTH as the end of a thread<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>2+ <span style='mso-tab-count:5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Link field address of FORTH<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>SWAP &gt;BODY-T<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+BODY address of FORTH<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>'F'<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span>2*<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Hashing algorithm is:<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>'O' + 2*<span style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>(1st_char*2+2nd_char)*2<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>5 +<span style='mso-tab-count:5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>+ length<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>#TTHREADS 1- AND 2*<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>\ Determine
+which thread FORTH<span style='mso-spacerun:yes'>&nbsp; </span>goes in.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>+ !-T <span style='mso-tab-count:5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+The first thread in the thread table of FORTH<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>IN-META<span style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Return to META vocabulary<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>FILES<span style='mso-tab-count:1'>&nbsp;&nbsp; </span>A
+vocabulary where the names of files loaded into the F-PC system are linked
+together.<span style='mso-spacerun:yes'>&nbsp; </span>F-PC allows you to create
+many small files.<span style='mso-spacerun:yes'>&nbsp; </span>To keep track of
+all the files loaded into the system, a special vocabulary FILES is
+created.<span style='mso-spacerun:yes'>&nbsp; </span>A file loaded will also
+compile its file name as a variable in this vocabulary.<span
+style='mso-spacerun:yes'>&nbsp; </span>It thus automatically creates the linked
+list of files that have been loaded.<span style='mso-spacerun:yes'>&nbsp;
+</span>This linked list will be used by VIEW to identify which file contains
+the source code of a word.<span style='mso-spacerun:yes'>&nbsp; </span>The
+first file whose link field address is smaller than the link field address of a
+word must be the file from which the word was loaded.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>VOCABULARY FILES<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Define FILES vocabulary<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>FILES DEFINITIONS<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Make it current<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>VARIABLE KERNEL1.SEQ<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Compile name of this file<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>FORTH DEFINITIONS<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Return to target<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>VARIABLE XSEG<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Base segment address of the List Segment in target<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>VARIABLE YSEG<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Base segment address of the Head Segment in target<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>ABNORM<span style='mso-tab-count:1'>&nbsp; </span>This
+routine allows you to use the system BREAK key to abort what F-PC is doing.<span
+style='mso-spacerun:yes'>&nbsp; </span>It restores the &gt;NEXT area, which is
+the most vulnerable place of the Forth machine.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>HEX<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>LABEL ABNORM<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+AX, # AD26<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>\ Value to
+restore in &gt;NEXT<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+&gt;NEXT AX<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>\ Restore it<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+AX, # E0FF<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>\ Value in
+&gt;NEXT + 2<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+&gt;NEXT 2+ AX<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>\ Restore it<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>XOR
+AX, AX<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+DS, AX<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+BX, # 471<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Clear the key value in DOS<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+0 [BX], AL<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+AX, CS<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+DS, AX<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Restore DS to CS<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>JMP
+ORIGIN 3 +<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Warm start<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>BIOSBK<span style='mso-tab-count:1'>&nbsp; </span>Put
+a JMP ABNORM into the &gt;NEXT area to force the execution of ABNORM after any
+Forth word currently being executed.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>LABEL BIOSBK<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>PUSH
+AX<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+AL, # E9<span style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+JMP code<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+CS: &gt;NEXT AL<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Store to &gt;NEXT<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+AX, # ABNORM &gt;NEXT - 3 -<span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>\
+Offset from &gt;NEXT to<span style='mso-spacerun:yes'>&nbsp; </span>ABNORM<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+CS: &gt;NEXT 1+ AX<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Complete the JMP code<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>POP
+AX<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>IRET<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>DOSBK<span style='mso-tab-count:1'>&nbsp;&nbsp; </span>Call
+DOS keyboard service 16.<span style='mso-spacerun:yes'>&nbsp; </span>The
+function number n must be on the data stack.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>LABEL DOSBK <span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>(
+n -- ) <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>PUSH
+AX<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+AH, # 0<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Throw away BREAK KEY<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>INT
+16<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>POP
+AX<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>CLC<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>RETF<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>DECIMAL<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>NEST<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>The
+run-time code (the inner interpreter) for colon words .<span
+style='mso-spacerun:yes'>&nbsp; </span>It pushes the current ES:IP register
+pair onto the return stack and sets the ES:IP to point to the beginning of a
+list of words to be executed.<span style='mso-spacerun:yes'>&nbsp; </span>It
+allows high level words to call other high level words with almost unlimited
+nesting.<span style='mso-spacerun:yes'>&nbsp; </span>In the code field of a
+colon definition, the first three bytes contain JMP NEST instruction.<span
+style='mso-spacerun:yes'>&nbsp; </span>The next byte contains a relative
+segment address, pointing to the list of code field addresses compiled in the
+list space, offset by the contents of XSEG.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>LABEL NEST<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>XCHG
+RP, SP<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\<span
+style='mso-spacerun:yes'>&nbsp; </span>4 cycles. Use SP to address return
+stack.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>PUSH
+ES<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+10 cycles. Save ES.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>PUSH
+IP<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+11 cycles. Save IP.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>XCHG
+RP, SP<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\<span
+style='mso-spacerun:yes'>&nbsp; </span>4 cycles. Restore RP.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+DI, AX<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\<span
+style='mso-spacerun:yes'>&nbsp; </span>2 cycles. Code field address<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+AX, 3 [DI] <span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp; </span>\ 18
+cycles. Get to BODY of code and fetch relative segment <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>LABEL NESTPATCH<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+This location is later patched at boot time to correct for the <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>ADD
+AX, # XSEG<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+actual value of XSEG at boot time.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+ES, AX <span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\<span
+style='mso-spacerun:yes'>&nbsp; </span>2 cycles. Move it into ES<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>SUB
+IP, IP<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\<span
+style='mso-spacerun:yes'>&nbsp; </span>3 cycles. Clear IP<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>NEXT<span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Ready to process list<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>META<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>EXIT<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Pop
+an ES:IP pair off the return stack and place it in the ES and IP register pair
+to resume processing the unfinished list of code field addresses.<span
+style='mso-spacerun:yes'>&nbsp; </span>Terminate a high level definition by
+nullifying what NEST had wrought.<span style='mso-spacerun:yes'>&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>CODE EXIT<span style='mso-tab-count:1'>&nbsp;&nbsp; </span>(
+-- )<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>XCHG
+RP, SP<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\<span
+style='mso-spacerun:yes'>&nbsp; </span>4 cycles. Use SP as RP.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>POP
+IP<span style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\<span
+style='mso-spacerun:yes'>&nbsp; </span>8 cycles. Restore IP<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>POP
+ES<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\<span
+style='mso-spacerun:yes'>&nbsp; </span>8 cycles. Restore ES<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span><span
+lang=EN-US style='mso-hansi-font-family:細明體;mso-bidi-font-family:細明體'>XCHG RP,
+SP<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\<span
+style='mso-spacerun:yes'>&nbsp; </span>4 cycles. Restore RP<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>NEXT<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>?EXIT <span style='mso-tab-count:1'>&nbsp; </span>Exit
+from a definition if the flag on stack is true.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>CODE ?EXIT<span style='mso-tab-count:1'>&nbsp; </span>(
+f1 -- )<span style='mso-spacerun:yes'>&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>POP
+CX<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>CX&lt;&gt;0
+IF<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>JMP
+' EXIT<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>THEN<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>NEXT<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>UNNEST<span style='mso-tab-count:1'>&nbsp; </span>Same
+as EXIT.<span style='mso-spacerun:yes'>&nbsp; </span>Compiled by ; .<span
+style='mso-spacerun:yes'>&nbsp; </span>The alias is defined to help the
+decompiler to recover ; .<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>DODOES<span style='mso-tab-count:1'>&nbsp; </span>The
+inner interpreter of the defining words.<span style='mso-spacerun:yes'>&nbsp;
+</span>The first three bytes in the code field of a daughter word created by a
+defining word are CALL DODOES, which calls the high level interpreter specified
+after DOES&gt; in the defining word.<span style='mso-spacerun:yes'>&nbsp;&nbsp;
+</span>First it pushes the ES:IP pair onto the return stack and then it pushes
+the BODY address of the word being executed onto the data stack which is what
+the CPU thinks of as its return stack.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>LABEL DODOES<span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>(
+addr1 addr2 -- addr1 )<span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>\
+addr1/2 are from two previous calls.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>XCHG
+RP, SP<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>PUSH
+ES<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>PUSH
+IP<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>XCHG
+RP, SP<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>POP
+DI<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Pop the BODY address<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+AX, 0 [DI]<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Get the list offset<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>LABEL DOESPATCH<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+This location is later patched at boot time to correct for the <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>ADD
+AX, # XSEG<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+actual value of XSEG at boot time.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+ES, AX<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Move to ES<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>SUB
+IP, IP<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Clear IP<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>NEXT<span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Execute high level inner<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>interpreter.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>UP<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Hold
+a pointer to the current USER area for multitasking.<span
+style='mso-spacerun:yes'>&nbsp; </span>All the system variables and the
+multitasking mechanism are stored in the user area.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>VARIABLE UP<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>DOCONSTANT<span style='mso-tab-count:1'>&nbsp; </span>The
+run time code (inner interpreter) for constants.<span
+style='mso-spacerun:yes'>&nbsp; </span>It takes the contents of Body (the
+parameter field) and pushes it onto the data stack.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>LABEL DOCONSTANT<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+BX, AX<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+AX points to he address of BODY where constant is stored<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>PUSH
+3 [BX]<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Push constant value<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>NEXT<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>DOVALUE<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Same
+as DOCONSTANT.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>DOUSER-VARIABLE<span style='mso-tab-count:1'> </span>The
+inner interpreter for USER variables.<span style='mso-spacerun:yes'>&nbsp;
+</span>Place a pointer to the current version of this variable on the
+stack.<span style='mso-spacerun:yes'>&nbsp; </span>It is needed for
+multitasking.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>LABEL DOUSER-VARIABLE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>POP
+BX<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Address of BODY<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+AX, 0 [BX]<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Get user offset<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>ADD
+AX, UP<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Add it to UP<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>1PUSH<span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Return its address<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>&gt;NEXT<span style='mso-tab-count:1'>&nbsp;&nbsp; </span>The
+address of the code inner interpreter.<span style='mso-spacerun:yes'>&nbsp;
+</span>It is redefined as a constant in the ASSEMBLER vocabulary to facilitate
+assembling the inner interpreter at the end of code definitions.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>ASSEMBLER &gt;NEXT META CONSTANT &gt;NEXT<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=NO-BOK style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體;mso-ansi-language:NO-BOK'>ASSEMBLER<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>NEST META CONSTANT &gt;NEST<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=NO-BOK style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體;mso-ansi-language:NO-BOK'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>EXECUTE<span style='mso-tab-count:1'> </span>Execute
+the word whose code field is on the stack.<span style='mso-spacerun:yes'>&nbsp;
+</span>Very useful for passing executable routines to procedures.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>CODE EXECUTE<span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>(
+cfa -- )<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>POP
+AX<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Pop execution address<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>JMP
+AX<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Jump to it<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>PERFORM<span style='mso-tab-count:1'> </span>Execute
+the word whose code field is stored at the address pointed to by the number on
+the stack.<span style='mso-spacerun:yes'>&nbsp; </span>Same as @ EXECUTE.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>DO-DEFER<span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>The
+runtime code for deferred words.<span style='mso-spacerun:yes'>&nbsp;
+</span>Fetch the code field address and executes it.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>CODE PERFORM<span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>(
+addr-of-cfa -- )<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>LABEL DO-DEFER<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>POP
+BX<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Pop address<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+AX, 0 [BX]<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Fetch execution address<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>JMP
+AX <span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Then jump<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>EXEC:<span style='mso-tab-count:1'>&nbsp;&nbsp; </span>Select
+the n'th execution address in the following address table and execute it.<span
+style='mso-spacerun:yes'>&nbsp; </span>This is a very fast and very powerful
+case structure compiled in the List Segment.<span
+style='mso-spacerun:yes'>&nbsp; </span>It is similar to CASE: in F83.<span
+style='mso-spacerun:yes'>&nbsp; </span>It is used in KEYTABLE, p. 91.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>CODE EXEC:<span style='mso-tab-count:1'>&nbsp; </span>(
+n -- )<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>POP
+BX<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Pop the case number<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>SHL
+BX, # 1<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Make it an address offset<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>ADD
+IP, BX<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Point it into the address table<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>LODSW
+ES:<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Get execution address<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>XCHG
+RP, SP<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>POP
+IP<span style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Pop ES:IP<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>POP
+ES<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Prepare to leave current colon word<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>XCHG
+RP, SP<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>JMP
+AX<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Execute and exit<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>DOUSER-DEFER<span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>The
+run-time code for user deferred words.<span style='mso-spacerun:yes'>&nbsp;
+</span>They are identical to regular deferred words except that each task has
+its own version.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>LABEL DOUSER-DEFER<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>POP
+BX<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+BODY address<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+BX, 0 [BX]<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+User variable offset<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>ADD
+BX, UP<span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Address in user area<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>MOV
+AX, 0 [BX]<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Fetch execution address<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>JMP
+AX <span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Do it<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>GO<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Execute
+a conventional machine code subroutine at the given address.<span
+style='mso-spacerun:yes'>&nbsp; </span>EXECUTE must be used to execute a Forth
+code word to manage the execution sequence.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>CODE GO<span style='mso-tab-count:1'> </span>( addr
+--- )<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>RET<span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+The address is on the data stack.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<span
+style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>NOOP<span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>One
+of the most useful words in Forth.<span style='mso-spacerun:yes'>&nbsp;
+</span>Do nothing.<span style='mso-spacerun:yes'>&nbsp; </span>It is often used
+as a place holder where other words can be plugged in later.<span
+style='mso-spacerun:yes'>&nbsp; </span>One way to do forward referencing.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>CODE NOOP<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>NEXT<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>PAUSE<span style='mso-tab-count:1'>&nbsp;&nbsp; </span>Used
+by the multitasker to switch tasks.<span style='mso-spacerun:yes'>&nbsp;
+</span>It is defined as a NOOP word now.<span style='mso-spacerun:yes'>&nbsp;
+</span>It will be patched when the multitasker is activated.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'>CODE PAUSE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>NOOP<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\
+Gets patched later<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>NOOP<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>NOOP<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>NEXT<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span>END-CODE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span lang=EN-US style='mso-hansi-font-family:細明體;
+mso-bidi-font-family:細明體'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
